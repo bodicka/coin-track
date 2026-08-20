@@ -1,0 +1,98 @@
+@use "../../../styles/variables" as *;
+
+header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $bg-secondary;
+  border-bottom: 1px solid $border-color;
+  padding: 20px;
+  position: relative;
+
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 882px) {
+      gap: 30px;
+    }
+
+    .containerLeft {
+      display: flex;
+      gap: 50px;
+      font-size: 13px;
+      align-items: center;
+
+      @media (max-width: 882px) {
+        gap: 20px;
+      }
+    }
+
+    .containerRigth {
+      display: flex;
+      gap: 50px;
+      font-size: 13px;
+      align-items: center;
+
+      @media (max-width: 882px) {
+        gap: 20px;
+      }
+
+      .burgerButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        @media (min-width: 723px) {
+          display: none;
+        }
+      }
+    }
+
+    .desktopNav {
+      display: flex;
+      gap: 50px;
+      @media (max-width: 882px) {
+        gap: 20px;
+      }
+
+      @media (max-width: 723px) {
+        display: none;
+      }
+    }
+
+    .mobileNav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: $bg-secondary;
+      padding: 20px;
+      border-bottom: 1px solid $border-color;
+      z-index: 100;
+      animation: slideDown 0.3s ease-in-out forwards;
+
+      @media (min-width: 723px) {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
