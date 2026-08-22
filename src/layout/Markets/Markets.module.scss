@@ -1,0 +1,8 @@
+@use "../../styles/variables";
+
+.containerGrid {
+  padding: 10vh 13vh 0 28vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 30px;
+}

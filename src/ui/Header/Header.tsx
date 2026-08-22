@@ -3,9 +3,9 @@ import {
   NAV_ITEM_RIGTH,
 } from "../../constants/header.constants";
 import styles from "./Header.module.scss";
-import logo from "../../../assets/logo/cointracker-logo.png";
+import logo from "../../assets/logo/cointracker-logo.png";
 import { useState } from "react";
-import burger from "../../../assets/logo/Group 692.png";
+import burger from "../../assets/logo/Group 692.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
