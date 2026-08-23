@@ -4,7 +4,7 @@ export interface Header {
     url: string;
 }
 
-export interface IMockData {
+export interface ICryptoMarkets {
     id: string;
     symbol: string;
     name: string;
@@ -18,3 +18,6 @@ export interface IMockData {
     price_change_percentage_24h: number;
 }
 
+export interface CardCoinProps {
+    coin: ICryptoMarkets;
+}

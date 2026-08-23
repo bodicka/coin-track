@@ -19,11 +19,11 @@ export const NAV_ITEM_LEFT: Header[] = [
     {
         id: 4,
         name: 'FEDBACK',
-        url: '/fedback',
+        url: '/feedback',
     },
 ]
 
-export const NAV_ITEM_RIGTH: Header[] = [
+export const NAV_ITEM_RIGHT: Header[] = [
     {
         id: 1,
         name: "DOCS",
