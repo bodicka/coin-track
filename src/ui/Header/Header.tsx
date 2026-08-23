@@ -1,6 +1,6 @@
 import {
   NAV_ITEM_LEFT,
-  NAV_ITEM_RIGTH,
+  NAV_ITEM_RIGHT,
 } from "../../constants/header.constants";
 import styles from "./Header.module.scss";
 import logo from "../../assets/logo/cointracker-logo.png";
@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const allNav = [...NAV_ITEM_LEFT, ...NAV_ITEM_RIGTH];
+  const allNav = [...NAV_ITEM_LEFT, ...NAV_ITEM_RIGHT];
 
   return (
     <header>
@@ -26,9 +26,9 @@ const Header = () => {
           </nav>
         </div>
 
-        <div className={styles.containerRigth}>
+        <div className={styles.containerRight}>
           <nav className={styles.desktopNav}>
-            {NAV_ITEM_RIGTH.map((item) => (
+            {NAV_ITEM_RIGHT.map((item) => (
               <Link key={item.id} to={item.url}>
                 {item.name}
               </Link>

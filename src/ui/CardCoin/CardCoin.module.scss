@@ -1,3 +1,11 @@
+@use "../../styles/mixins" as *;
+
+.loaderCenter {
+  @include flex-center;
+  min-height: 60vh;
+  width: 100%;
+}
+
 .cardCoinContainer {
   position: relative;
   background: #121216;
@@ -11,7 +19,7 @@
   gap: 10px;
   font-feature-settings: "tnum";
 
-  .positiv {
+  .positive {
     color: #16c784 !important;
     font-weight: 600;
   }
@@ -53,18 +61,18 @@
     }
 
     &:hover {
-    .watchlistBtn {
-      opacity: 1;
-      visibility: visible;
+      .watchlistBtn {
+        opacity: 1;
+        visibility: visible;
+      }
     }
-  }
 
-    .cardHeaderParagraf {
+    .cardHeaderParagraph {
       display: flex;
       align-items: center;
       gap: 5px;
 
-      .paragraf {
+      .paragraph {
         display: flex;
         flex-direction: column;
 
@@ -103,7 +111,7 @@
     padding: 0 15px 0 15px;
     gap: 10px;
 
-    .marketStateCapAndHight {
+    .marketStateCapAndHigh {
       display: flex;
       justify-content: space-between;
       align-items: center;
