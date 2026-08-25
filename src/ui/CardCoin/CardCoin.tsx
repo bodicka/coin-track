@@ -1,11 +1,26 @@
 import { formatNumber } from "../../lib/formatNumber";
 import view from "../../assets/card-assets/view.png";
+import complete from "../../assets/card-assets/checked.png";
+import multiply from "../../assets/card-assets/multiply.png";
 import styles from "./CardCoin.module.scss";
-import { useToogleWatchList } from "../../store/useWatchlistStore";
 import type { CardCoinProps } from "../../types";
 
-const CardCoin = ({ coin }: CardCoinProps) => {
-  const toggleWatchlist = useToogleWatchList();
+const CardCoin = ({
+  coin,
+  isInWathcList,
+  onToggleWatchlist,
+  variant = "MARKETS",
+}: CardCoinProps) => {
+  const isDisabled = variant === "MARKETS" && isInWathcList;
+
+  const getIcon = () => {
+    if (variant === "WATCHLIST") {
+      return multiply;
+    } else if (!isInWathcList) {
+      return view;
+    }
+    return complete;
+  };
 
   return (
     <>
@@ -21,14 +36,15 @@ const CardCoin = ({ coin }: CardCoinProps) => {
             </div>
           </div>
           <button
+            disabled={isDisabled}
             className={styles.watchlistBtn}
             onClick={(e) => {
               e.stopPropagation();
-              toggleWatchlist(coin.id);
+              onToggleWatchlist(coin);
             }}
             title="Добавить в Watchlist"
           >
-            <img width={20} height={20} src={view} alt="view" />
+            <img width={20} height={20} src={getIcon()} alt="view" />
           </button>
         </div>
         <div className={styles.priceContainer}>

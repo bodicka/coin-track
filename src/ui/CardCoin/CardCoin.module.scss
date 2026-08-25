@@ -58,6 +58,12 @@
         color: #ffffff;
         background: rgba(255, 255, 255, 0.15);
       }
+
+      &:disabled {
+        cursor: not-allowed;
+        visibility: visible;
+        opacity: 1;
+      }
     }
 
     &:hover {
