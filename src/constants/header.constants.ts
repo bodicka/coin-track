@@ -25,20 +25,22 @@ export const NAV_ITEM_LEFT: Header[] = [
 
 export const NAV_ITEM_RIGHT: Header[] = [
     {
-        id: 1,
+        id: 5,
         name: "DOCS",
         url: '/docs'
     },
     {
-        id: 2,
+        id: 6,
         name: 'PRICING',
         url: '/pricing',
     },
-     {
-        id: 3,
+    {
+        id: 7,
         name: 'FOR ME',
         url: '/for-me',
     }
-]
+];
+
+export const allNav = [...NAV_ITEM_LEFT, ...NAV_ITEM_RIGHT];
 
 

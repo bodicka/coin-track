@@ -3,11 +3,7 @@
 body {
   background-color: $bg-primary;
   color: $text-primary;
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: $font-family-base;
   min-height: 100vh;
   line-height: 1.5;
 
@@ -18,7 +14,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: $container-max-width;
   margin: 0 auto;
   padding: 0 20px;
 }

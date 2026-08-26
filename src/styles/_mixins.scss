@@ -1,13 +1,78 @@
 @use "variables" as *;
 
+// ==============================
+// Layout helpers
+// ==============================
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ==============================
+// Typography helpers
+// ==============================
+// Табличные цифры (равная ширина) для цен/процентов
+@mixin tnum {
+  font-feature-settings: "tnum";
+}
+
+// Приглушённая подпись (label)
+@mixin stat-label {
+  font-weight: 400;
+  color: $text-muted;
+  @include tnum;
+}
+
+// Акцентное значение (value)
+@mixin stat-value {
+  font-weight: 600;
+  color: $text-primary;
+  @include tnum;
+}
+
+// Строка "подпись — значение" (market cap, volume и т.п.)
+@mixin stat-row {
+  @include flex-between;
+
+  span {
+    @include stat-label;
+  }
+
+  & > *:last-child {
+    @include stat-value;
+  }
+}
+
+// ==============================
+// Navigation
+// ==============================
+// Горизонтальный ряд навигации с адаптивным gap
+@mixin nav-row($font-size: null) {
+  display: flex;
+  align-items: center;
+  gap: $nav-gap-desktop;
+
+  @if $font-size {
+    font-size: $font-size;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    gap: $nav-gap-mobile;
+  }
+}
+
+// ==============================
+// Surfaces
+// ==============================
 @mixin card-style {
   background-color: $bg-secondary;
-  border-radius: 12px;
+  border-radius: $radius-md;
   padding: 16px;
 }

@@ -1,4 +1,5 @@
 import {
+  allNav,
   NAV_ITEM_LEFT,
   NAV_ITEM_RIGHT,
 } from "../../constants/header.constants";
@@ -10,7 +11,6 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const allNav = [...NAV_ITEM_LEFT, ...NAV_ITEM_RIGHT];
 
   return (
     <header>
@@ -39,6 +39,7 @@ const Header = () => {
             className={styles.burgerButton}
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             <img src={burger} alt="burger" />
           </button>
@@ -46,9 +47,13 @@ const Header = () => {
         {isOpen && (
           <nav className={styles.mobileNav}>
             {allNav.map((item) => (
-              <a key={item.id} href={item.url}>
+              <Link
+                key={item.id}
+                to={item.url}
+                onClick={() => setIsOpen(false)}
+              >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
         )}

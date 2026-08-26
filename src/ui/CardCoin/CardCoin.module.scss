@@ -1,38 +1,28 @@
-@use "../../styles/mixins" as *;
-
-.loaderCenter {
-  @include flex-center;
-  min-height: 60vh;
-  width: 100%;
-}
-
 .cardCoinContainer {
   position: relative;
-  background: #121216;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  background: $bg-card;
+  border: 1px solid $border-light;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
   min-height: 250px;
   display: flex;
   flex-direction: column;
   padding: 20px;
   gap: 10px;
-  font-feature-settings: "tnum";
+  @include tnum;
 
   .positive {
-    color: #16c784 !important;
+    color: $positive-green !important;
     font-weight: 600;
   }
   .negative {
-    color: #ea3943 !important;
+    color: $negative-red !important;
     font-weight: 600;
   }
 
   span {
-    color: #8c939f;
+    @include stat-label;
     font-size: 0.85rem;
-    font-weight: 400;
-    font-feature-settings: "tnum";
   }
 
   .cardHeader {
@@ -45,10 +35,10 @@
     .watchlistBtn {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
+      border-radius: $radius-sm;
       padding: 6px;
       cursor: pointer;
-      color: #8c939f;
+      color: $text-muted;
 
       opacity: 0;
       visibility: hidden;
@@ -84,13 +74,13 @@
 
         h2 {
           font-weight: 700;
-          color: #ffffff;
-          font-feature-settings: "tnum";
+          color: $text-primary;
+          @include tnum;
         }
         span {
           font-weight: 600;
-          color: #ffffff;
-          font-feature-settings: "tnum";
+          color: $text-primary;
+          @include tnum;
         }
       }
     }
@@ -99,11 +89,11 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
-    padding: 0 15px 0 15px;
+    padding: 0 15px;
     font-size: 1.25rem;
     font-weight: 700;
-    color: #ffffff;
-    font-feature-settings: "tnum";
+    color: $text-primary;
+    @include tnum;
 
     .percentageToPrice {
       display: flex;
@@ -114,43 +104,15 @@
   .marketState {
     display: flex;
     flex-direction: column;
-    padding: 0 15px 0 15px;
+    padding: 0 15px;
     gap: 10px;
 
     .marketStateCapAndHigh {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      span {
-        font-weight: 400;
-        color: #8c939f;
-        font-feature-settings: "tnum";
-      }
-
-      & > *:last-child {
-        font-weight: 600;
-        color: #ffffff;
-        font-feature-settings: "tnum";
-      }
+      @include stat-row;
     }
 
     .totalVolumeAndLowContainer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      span {
-        font-weight: 400;
-        color: #8c939f;
-        font-feature-settings: "tnum";
-      }
-
-      & > *:last-child {
-        font-weight: 600;
-        color: #ffffff;
-        font-feature-settings: "tnum";
-      }
+      @include stat-row;
     }
   }
 }
