@@ -1,9 +1,60 @@
+// ==============================
+// Backgrounds
+// ==============================
 $bg-primary: #0a0a0a;
 $bg-secondary: #121212;
 $bg-hover: #1e1e1e;
+$bg-card: #121216;
 
+// ==============================
+// Text
+// ==============================
 $text-primary: #ffffff;
 $text-secondary: #888888;
+$text-muted: #8c939f;
+
+// ==============================
+// Accents
+// ==============================
 $accent-green: #22c55e;
 $accent-red: #ef4444;
+$error-red: #ff4d4f;
+$positive-green: #16c784;
+$negative-red: #ea3943;
+
+// ==============================
+// Borders & shadows
+// ==============================
 $border-color: #262626;
+$border-light: rgba(255, 255, 255, 0.08);
+$shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+// ==============================
+// Typography
+// ==============================
+$font-family-base:
+  "Inter",
+  system-ui,
+  -apple-system,
+  sans-serif;
+
+// ==============================
+// Layout
+// ==============================
+$header-height: 60px;
+$container-max-width: 1200px;
+$nav-gap-desktop: 50px;
+$nav-gap-mobile: 20px;
+
+// ==============================
+// Radii
+// ==============================
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+
+// ==============================
+// Breakpoints
+// ==============================
+$breakpoint-tablet: 882px;
+$breakpoint-mobile: 723px;

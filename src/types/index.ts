@@ -20,7 +20,7 @@ export interface ICryptoMarkets {
 
 export interface CardCoinProps {
     coin: ICryptoMarkets;
-    isInWathcList: boolean;
+    isInWatchlist: boolean;
     onToggleWatchlist: (coin: ICryptoMarkets) => void;
     variant?: "MARKETS" | "WATCHLIST";
 }
